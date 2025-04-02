@@ -1,8 +1,9 @@
 package conta;
 
+import conta.controller.ContaController;
 import conta.model.ContaCorrente;
 import conta.model.ContaPoupanca;
-
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Menu {
@@ -14,6 +15,7 @@ public class Menu {
     public static void main(String[] args) {
         Scanner leia = new Scanner(System.in);
         int opcao;
+        ContaController contas  = new ContaController();
 
        
 		
@@ -66,6 +68,9 @@ public class Menu {
                     break;
                 case 2:
                     System.out.println(YELLOW + "Listar todas as Contas\n\n" + RESET);
+                    contas.listarTodas();
+                    keyPress();
+				
                     break;
                 case 3:
                     System.out.println(YELLOW + "Consultar dados da Conta - por número\n\n" + RESET);
